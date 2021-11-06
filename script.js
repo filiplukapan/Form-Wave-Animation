@@ -1,10 +1,11 @@
-const search = document.querySelector('.search');
-const btn = document.querySelector('.btn');
-const input = document.querySelector('.input');
+const labels = document.querySelectorAll('.form-control label');
 
 
-
-btn.addEventListener('click', () => {
-    search.classList.toggle('active');
-    input.focus()
+labels.forEach(label => {
+	label.innerHTML = label.innerText
+	.split('')
+	.map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)
+	.join('') //turn it back to a string
 })
+
+console.log(labels)
